@@ -3,7 +3,7 @@
 <?php
     if(isset($_GET['nome']) && isset($_GET['mail']) && isset($_GET['età'])){
         //controllo name, email ed età per accesso corretto
-        if(strlen($_GET['nome']) > 3 && str_contains($_GET['mail'], '.') && str_contains($_GET['mail'], '@') && is_numeric($_GET['età'])){
+        if(strlen($_GET['nome']) > 3 && str_contains($_GET['mail'], '.') && str_contains($_GET['mail'], '@') && is_numeric($_GET['eta'])){
             $result = 'Accesso riuscito';
         }
         else{
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-4">
                         <label for="control-label">Età</label>
-                        <input type="text" id="età" name="età" placeholder="Inserisci la tua età" class="form-control" required>
+                        <input type="text" id="eta" name="eta" placeholder="Inserisci la tua età" class="form-control" required>
                     </div>
                     <div class="col-12 mt-5">
                         <div class="d-flex justify-content-center">
