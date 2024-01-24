@@ -1,10 +1,19 @@
 <!-- LOGICA DI LAVORO -->
 
 <?php
-
+    if(isset($_GET['nome']) && isset($_GET['mail']) && isset($_GET['età'])){
+        //controllo name, email ed età per accesso corretto
+        if(strlen($_GET['nome']) > 3 && str_contains($_GET['mail'], '.') && str_contains($_GET['mail'], '@') && is_numeric($_GET['età'])){
+            $result = 'Accesso riuscito';
+        }
+        else{
+            $result = 'Accesso negato';
+        }
+    }
 ?>
 
 <!-- LOGICA DI VISUALIZZAZIONE -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +27,8 @@
     <h1 class="text-center my-4">Inserisci i dati per eseguire l'accesso</h1>
     <div class="container">
         <div class="row">
+
+            <!-- FORM -->
             <form action="index.php" method="GET">
                 <div class="row">
                     <div class="col-4">
@@ -39,6 +50,13 @@
                     </div>
                 </div>
             </form>
+
+            <!-- Risultato -->
+            <h3 class="text-center mt-5">
+                <?php if(isset($result)){ ?>
+                    <?php echo $result ?>
+                <?php } ?>
+            </h3>
         </div>
     </div>
 </body>
