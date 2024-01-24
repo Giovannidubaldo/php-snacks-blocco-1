@@ -1,7 +1,7 @@
 <!-- LOGICA DI LAVORO -->
 
 <?php
-    if(isset($_GET['nome']) && isset($_GET['mail']) && isset($_GET['età'])){
+    if(isset($_GET['nome']) && isset($_GET['mail']) && isset($_GET['eta'])){
         //controllo name, email ed età per accesso corretto
         if(strlen($_GET['nome']) > 3 && str_contains($_GET['mail'], '.') && str_contains($_GET['mail'], '@') && is_numeric($_GET['eta'])){
             $result = 'Accesso riuscito';
