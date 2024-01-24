@@ -1,7 +1,6 @@
 <!-- LOGICA DI LAVORO -->
 
 <?php 
-    echo '<pre>';
     $match = [
         [
             'casa' => 'Indiana Pacers',
@@ -28,11 +27,10 @@
             'score_trasferta' => '107',
         ]
     ];
-
-    var_dump($match)
 ?>
 
 <!-- LOGICA DI VISUALIZZAZIONE -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +41,17 @@
     <title>Snack 1</title>
 </head>
 <body>
-    
+    <h1 class="text-center text-uppercase my-3">risultati nba</h1>
+    <div class="container">
+        <div class="row">
+            <?php foreach ($match as $match) { ?>
+                <div class="col-6 my-5">
+                    <h4 class=" text-center"><?php echo $match['casa']." - ".$match['trasferta']; ?></h4>
+                    <h5 class="text-center"> Finale: </h5>
+                    <p class=" text-center"><?php echo $match['score_casa']." - ".$match['score_trasferta']; ?></p>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
 </body>
 </html>
